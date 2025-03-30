@@ -1,11 +1,11 @@
-@(firebaseappContest: String, firebaseappContestApikey: String, firebaseappContestMessagingsenderid: String)
+@(firebaseappContest: String, firebaseappContestApikey: String, firebaseappContestDatabaseURL: String, firebaseappContestMessagingsenderid: String)
 
 <!DOCTYPE html>
 <html lang="ja" ng-app="contestApp">
 <head>
     @headeronlyfire()
 
-@basejs(firebaseappContest, firebaseappContestApikey, firebaseappContestMessagingsenderid)
+    @basejs(firebaseappContest, firebaseappContestApikey, firebaseappContestDatabaseURL, firebaseappContestMessagingsenderid)
 </head>
 <body ng-controller="RedirectCtrl">
     Redirecting...

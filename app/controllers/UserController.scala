@@ -16,7 +16,7 @@ class UserController @Inject() (cc: ControllerComponents, configuration: Configu
      * User pages
      */
     def user(id: String) = Action {
-        Ok(views.html.user(id, getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestMessagingsenderid, getFirebaseappWca))
+        Ok(views.html.user(id, getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestDatabaseURL, getFirebaseappContestMessagingsenderid, getFirebaseappWca))
     }
 
 }

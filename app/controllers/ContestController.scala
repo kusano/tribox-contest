@@ -21,27 +21,27 @@ class ContestController @Inject() (
      * Contest pages
      */
     def contestdefault = Action {
-        Ok(views.html.contestdefault(getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestMessagingsenderid))
+        Ok(views.html.contestdefault(getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestDatabaseURL, getFirebaseappContestMessagingsenderid))
     }
 
     def contest(cid: String) = Action {
-        Ok(views.html.contest(cid, getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestMessagingsenderid, getFirebaseappWca))
+        Ok(views.html.contest(cid, getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestDatabaseURL, getFirebaseappContestMessagingsenderid, getFirebaseappWca))
     }
 
     def choose(cid: String, eid: String) = Action {
-        Ok(views.html.contestchoose(cid, eid, getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestMessagingsenderid))
+        Ok(views.html.contestchoose(cid, eid, getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestDatabaseURL, getFirebaseappContestMessagingsenderid))
     }
 
     def form(cid: String, eid: String) = Action {
-        Ok(views.html.contestform(cid, eid, getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestMessagingsenderid))
+        Ok(views.html.contestform(cid, eid, getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestDatabaseURL, getFirebaseappContestMessagingsenderid))
     }
 
     def timer(cid: String, eid: String) = Action {
-        Ok(views.html.contesttimer(cid, eid, getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestMessagingsenderid))
+        Ok(views.html.contesttimer(cid, eid, getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestDatabaseURL, getFirebaseappContestMessagingsenderid))
     }
 
     def solution(cid: String, eid: String) = Action {
-        Ok(views.html.contestsolution(cid, eid, getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestMessagingsenderid))
+        Ok(views.html.contestsolution(cid, eid, getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestDatabaseURL, getFirebaseappContestMessagingsenderid))
     }
 
     def confirm(cid: String, eid: String) = Action {
@@ -126,7 +126,7 @@ class ContestController @Inject() (
             puzzleBrandsMap += puzzleBrand.category_id -> puzzleBrand.category_name;
         }
 
-        Ok(views.html.contestconfirm(cid, eid,  brandsPuzzles, puzzleBrands, puzzleBrandsMap, getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestMessagingsenderid))
+        Ok(views.html.contestconfirm(cid, eid,  brandsPuzzles, puzzleBrands, puzzleBrandsMap, getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestDatabaseURL, getFirebaseappContestMessagingsenderid))
     }
 
     def resultindex(cid: String) = Action {
@@ -134,7 +134,7 @@ class ContestController @Inject() (
     }
 
     def result(cid: String, eid: String) = Action {
-        Ok(views.html.contestresult(cid, eid, getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestMessagingsenderid, getFirebaseappWca))
+        Ok(views.html.contestresult(cid, eid, getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestDatabaseURL, getFirebaseappContestMessagingsenderid, getFirebaseappWca))
     }
 
 }

@@ -1,4 +1,4 @@
-@(firebaseappContest: String, firebaseappContestApikey: String, firebaseappContestMessagingsenderid: String, firebaseappWca: String = "")
+@(firebaseappContest: String, firebaseappContestApikey: String, firebaseappContestDatabaseURL: String, firebaseappContestMessagingsenderid: String, firebaseappWca: String = "")
 
 <script>
 window.TriboxContest = {};
@@ -218,7 +218,7 @@ var app = angular.module('contestApp', ['firebase', 'ngSanitize']);
 var config = {
     apiKey: "@{firebaseappContestApikey}",
     authDomain: "@{firebaseappContest}.firebaseapp.com",
-    databaseURL: "https://@{firebaseappContest}.firebaseio.com",
+    databaseURL: "@{firebaseappContestDatabaseURL}",
     projectId: "@{firebaseappContest}",
     storageBucket: "@{firebaseappContest}.appspot.com",
     messagingSenderId: "@{firebaseappContestMessagingsenderid}"

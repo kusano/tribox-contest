@@ -5,6 +5,7 @@
 // Firebase の設定
 exports.CONTESTAPP        = 'xxxxxxxx';
 exports.CONTESTAPP_SECRET = 'xxxxxxxx';
+exports.CONTESTAPP_DB_URL = 'xxxxxxxx';
 exports.TRIBOXAPP         = 'xxxxxxxx';
 exports.TRIBOXAPP_SECRET  = 'xxxxxxxx';
 exports.WCAAPP            = 'xxxxxxxx';
