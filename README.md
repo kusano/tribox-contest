@@ -31,9 +31,41 @@ cp contestmanager/config.sample.js contestmanager/config.js  # and edit contestm
 ```
 
 データベースの用意:
+
+`db.store` のDBのスキーマは次の通り。
+
 ```
-TODO
+create table `dtb_products`(
+    `product_id` integer,
+    `name` text,
+    `main_image` text,
+    `maker_id` integer,
+    `status` integer,
+    `del_flg` integer,
+    primary key (`product_id`)
+);
+
+create table `dtb_category`(
+    `category_id` integer,
+    `category_name` text,
+    `parent_category_id` integer,
+    primary key (`category_id`)
+);
+
+create table `dtb_product_categories`(
+    `product_id` integer,
+    `category_id` integer,
+    primary key (`product_id`, `category_id`)
+);
+
+create table `stickers_puzzles_except`(
+    `puzzle_id` integer,
+    `except_store` integer,
+    primary key (`puzzle_id`)
+);
 ```
+
+Firebase Realtime Databaseには、 contestapp.initialdata.json をインポートして、 rules.jsonc のルールを設定する。
 
 Firebase Admin SDK サービスアカウントの秘密鍵をダウンロードして `contestmanager/secret/serviceAccountKey.json` に保存する。
 
@@ -274,7 +306,7 @@ node contestmanager/update-wcaapp.js
 0 21 * * 6 /usr/bin/node /path/to/contestapp/contestmanager/reminder.js > /path/to/contestapp/logs/reminder.`date +\%Y\%m\%d`.stdout.log 2> /path/to/contestapp/logs/reminder.`date +\%Y\%m\%d`.stderr.log
 
 # Count participants
-5,15,25,35,45,55 * * * * /usr/bin/node /path/to/contestapp/contestmanager/count-participants.js --inprogress -save
+5,15,25,35,45,55 * * * * /usr/bin/node /path/to/contestapp/contestmanager/count-participants.js --inprogress --save
 
 # Points
 2 22 * * 0 /usr/bin/node /path/to/contestapp/contestmanager/append-points.js
