@@ -65,7 +65,8 @@ exports.NUM_LOTTERY_EVENT = {
     'epyram': 13,
     'eskewb': 8,
     'esq1': 6,
-    'eclock': 6
+    'eclock': 6,
+    'efto': 6,
 };
 // 抽選ポイント数
 exports.LOTTERY_POINT = 100;

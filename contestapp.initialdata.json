@@ -85,6 +85,14 @@
             "name": "7×7×7",
             "scramblePuzzle": "777"
         },
+        "efto": {
+            "attempts": 5,
+            "format": "time",
+            "hasInspection": true,
+            "method": "average",
+            "name": "FTO",
+            "scramblePuzzle": "fto"
+        },
         "eclock": {
             "attempts": 5,
             "format": "time",
