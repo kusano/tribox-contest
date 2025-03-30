@@ -127,7 +127,7 @@ app.controller('AuthFirstSettingCtrl', ['$scope', 'Auth', function($scope, Auth)
                                                         Auth.$signOut();
                                                     } else {
                                                         console.log('Update successfully: ' + authData.uid + ' (' + _username + ')');
-                                                        location.href = '@routes.SettingController.verify?showskip=1';
+                                                        location.href = '@routes.HomeController.index';
                                                     }
                                                 });
                                             }
