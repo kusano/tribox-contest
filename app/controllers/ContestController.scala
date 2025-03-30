@@ -110,6 +110,8 @@ class ContestController @Inject() (
             targetCategory = 113;
         } else if (eid == "clock") {
             targetCategory = 544;
+        } else if (eid == "fto") {
+            targetCategory = 110;
         }
         var brandsPuzzles = Map.empty[Int, List[Puzzle]];
         for (puzzle:Puzzle <- puzzles) {

@@ -225,3 +225,7 @@ vertical-align: -15%;
 .cubing-icon.unofficial-333_team_factory:before {
   content: "\f146";
 }
+
+.cubing-icon.event-fto:before {
+  content: "\f13e";
+}

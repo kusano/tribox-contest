@@ -14,8 +14,15 @@ var Config = require('./config.js');
 var contestRef = require('./contestref.js').ref;
 
 // デフォルトの競技
-var EventsDefault = ['e333', 'e222', 'e444', 'e555', 'e666', 'e777', 'e333bf', 'e333fm', 'e333oh', 'eminx', 'epyram', 'eskewb', 'esq1', 'eclock'];
+var EventsDefault = ['e333', 'e222', 'e444', 'e555', 'e666', 'e777', 'e333bf', 'e333fm', 'e333oh', 'eminx', 'epyram', 'eskewb', 'esq1', 'eclock', 'efto'];
 
+var ftoScrambles = [
+    // FTOのスクランブルをここに貼る。
+    // 1シーズンあたり150個くらい。
+    // "D B D' B' R D L' R' U' R U' R B' R' U L R' B L D' BR' BL' B BL F' D' BR'",
+    // "D' B L R L D B' R' D' U' L U R D R L' U B' R L' R' U BR R L' U' F L BR",
+    //  :
+];
 
 var usage = function() {
     console.error('Usage: node create-season.js 20161');
@@ -112,7 +119,9 @@ contestRef.child('events').once('value', function(snap) {
 
             var url = 'http://' + Config.TNOODLE_HOST + ':2014/scramble/.json?seed=' + contestId + Config.SEED;
             contest.events.forEach(function(eventId) {
-                url += '&' + eventId + '=' + Events[eventId].scramblePuzzle + '*' + Events[eventId].attempts;
+                if (eventId != "efto") {
+                    url += '&' + eventId + '=' + Events[eventId].scramblePuzzle + '*' + Events[eventId].attempts;
+                }
             });
             console.log('Creating scrambles for ' + contestId + ' ...');
             console.log('  ' + url);
@@ -134,6 +143,17 @@ contestRef.child('events').once('value', function(snap) {
                         var _scrambles = result.scrambles;
                         scrambles[contestId][_title] = _scrambles;
                     });
+
+                    // FTOがあればここで追加。
+                    contest.events.forEach(function(eventId) {
+                        if (eventId == "efto") {
+                            scrambles[contestId][eventId] = [];
+                            for (let i=0; i<Events[eventId].attempts; i++) {
+                                scrambles[contestId][eventId].push(ftoScrambles.pop());
+                            }
+                        }
+                    });
+
                     console.log('done for ' + contestId);
                     next();
                 } else {
