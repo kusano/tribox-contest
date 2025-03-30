@@ -37,6 +37,7 @@ contest.playpath = "/path/to/playapp"
 # 4) Change firebase app name.
 firebaseapp.contest = "firebase-contest-app"
 firebaseapp.contestapikey = "firebase-contest-app_apiKey"
+firebaseapp.contestdatabaseurl = "firebase-contest-database_url"
 firebaseapp.contestmessagingsenderid = "firebase-contest-app_messagingSenderId"
 firebaseapp.wca = "firebase-wca-app"
 

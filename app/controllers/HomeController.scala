@@ -26,6 +26,9 @@ class HomeController @Inject() (cc: ControllerComponents, configuration: Configu
     def getFirebaseappContestApikey(): String = {
         return configuration.underlying.getString("firebaseapp.contestapikey")
     }
+    def getFirebaseappContestDatabaseURL(): String = {
+        return configuration.underlying.getString("firebaseapp.contestdatabaseurl")
+    }
     def getFirebaseappContestMessagingsenderid(): String = {
         return configuration.underlying.getString("firebaseapp.contestmessagingsenderid")
     }
@@ -48,49 +51,49 @@ class HomeController @Inject() (cc: ControllerComponents, configuration: Configu
     def index = Action { request =>
         var event = "";
         if(request.queryString.contains("e")) event = request.queryString("e")(0);
-        Ok(views.html.index(getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestMessagingsenderid, getGoogleVerification, request.uri, event))
+        Ok(views.html.index(getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestDatabaseURL, getFirebaseappContestMessagingsenderid, getGoogleVerification, request.uri, event))
     }
 
     /**
      * About / Regulations
      */
     def about = Action {
-        Ok(views.html.about(getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestMessagingsenderid))
+        Ok(views.html.about(getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestDatabaseURL, getFirebaseappContestMessagingsenderid))
     }
     def regulations = Action {
-        Ok(views.html.regulations(getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestMessagingsenderid))
+        Ok(views.html.regulations(getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestDatabaseURL, getFirebaseappContestMessagingsenderid))
     }
 
     /**
      * Release Notes
      */
     def christmas2018 = Action {
-        Ok(views.html.christmas2018(getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestMessagingsenderid))
+        Ok(views.html.christmas2018(getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestDatabaseURL, getFirebaseappContestMessagingsenderid))
     }
 
     /**
      * Auth
      */
     def join = Action {
-        Ok(views.html.join(getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestMessagingsenderid))
+        Ok(views.html.join(getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestDatabaseURL, getFirebaseappContestMessagingsenderid))
     }
 
     def login = Action {
-        Ok(views.html.login(getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestMessagingsenderid))
+        Ok(views.html.login(getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestDatabaseURL, getFirebaseappContestMessagingsenderid))
     }
 
     def logout = Action {
-        Ok(views.html.logout(getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestMessagingsenderid))
+        Ok(views.html.logout(getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestDatabaseURL, getFirebaseappContestMessagingsenderid))
     }
 
     def forgot = Action {
-        Ok(views.html.forgot(getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestMessagingsenderid))
+        Ok(views.html.forgot(getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestDatabaseURL, getFirebaseappContestMessagingsenderid))
     }
 
     /**
      * Timer for practice
      */
     /*def timer = Action {
-        Ok(views.html.contesttimer("", "", getContestName, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestMessagingsenderid))
+        Ok(views.html.contesttimer("", "", getContestName, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestDatabaseURL, getFirebaseappContestMessagingsenderid))
     }*/
 }

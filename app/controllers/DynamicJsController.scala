@@ -17,7 +17,7 @@ class DynamicJsController @Inject() (cc: ControllerComponents, productService: P
      */
     def products = Action {
         val products = productService.getAll
-        Ok(views.js.products.render(products)).as("text/javascript utf-8")
+        Ok(views.js.products.render(products)).as("text/javascript; charset=utf-8")
     }
 
 }

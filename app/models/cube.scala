@@ -22,7 +22,7 @@ class CubeRepository @Inject() (dbapi: DBApi) {
         db.withConnection{ implicit c =>
             val result = SQL("""
                 SELECT `product_id`, `name`, `category_id`, `parent_category_id` FROM (
-                  SELECT `product_id`, `name`, C1.`category_id` as category_id, C1.`category_name` as category_name, C2.`category_id` as parent_category_id, C2.`category_name` as parent_category_name, `main_image`, EXPT.`except_store` AS except_flg
+                  SELECT PPC.`product_id`, `name`, C1.`category_id` as category_id, C1.`category_name` as category_name, C2.`category_id` as parent_category_id, C2.`category_name` as parent_category_name, `main_image`, EXPT.`except_store` AS except_flg
                    FROM (
                     SELECT P.`product_id`, `category_id`, `name`, `main_image`
                     FROM `dtb_product_categories` PC

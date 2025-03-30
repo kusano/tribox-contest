@@ -13,20 +13,20 @@ import play.api.mvc._
 class RankingController @Inject() (cc: ControllerComponents, configuration: Configuration) extends HomeController(cc, configuration) {
 
     def rankingdefault = Action {
-        Ok(views.html.rankingdefault(getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestMessagingsenderid))
+        Ok(views.html.rankingdefault(getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestDatabaseURL, getFirebaseappContestMessagingsenderid))
     }
     def ranking(sid: String) = Action {
-        Ok(views.html.ranking(sid, getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestMessagingsenderid, getFirebaseappWca))
+        Ok(views.html.ranking(sid, getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestDatabaseURL, getFirebaseappContestMessagingsenderid, getFirebaseappWca))
     }
 
     def rankingpuzzledefault = Action {
-        Ok(views.html.rankingpuzzledefault(getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestMessagingsenderid))
+        Ok(views.html.rankingpuzzledefault(getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestDatabaseURL, getFirebaseappContestMessagingsenderid))
     }
     def rankingpuzzle(sid: String) = Action {
-        Ok(views.html.rankingpuzzle(sid, getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestMessagingsenderid))
+        Ok(views.html.rankingpuzzle(sid, getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestDatabaseURL, getFirebaseappContestMessagingsenderid))
     }
     def rankingpuzzleall(sid: String) = Action {
-        Ok(views.html.rankingpuzzleall(sid, getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestMessagingsenderid))
+        Ok(views.html.rankingpuzzleall(sid, getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestDatabaseURL, getFirebaseappContestMessagingsenderid))
     }
 
 }

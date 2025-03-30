@@ -14,7 +14,7 @@ var serviceAccount = require("./secret/serviceAccountKey.json");
 
 admin.initializeApp({
       credential: admin.credential.cert(serviceAccount),
-      databaseURL: "https://" + Config.CONTESTAPP + ".firebaseio.com"
+      databaseURL: Config.CONTESTAPP_DB_URL
 });
 
 var db = admin.database();
