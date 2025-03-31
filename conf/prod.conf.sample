@@ -29,9 +29,9 @@ db {
 }
 
 # 3) Change contest info.
-contest.name = "TORIBO Contest トリコン"
-contest.description = "TORIBOコンテストは、誰でも参加可能。毎週開催のお得なネットコンテストです。"
-contest.url = "https://contest.tribox.com"
+contest.name = "KSN Contest KSNコン"
+contest.description = "KSNコンテストは、誰でも参加可能。毎週開催のお得なネットコンテストです。"
+contest.url = "https://ksncon.sweetduet.info"
 contest.playpath = "/path/to/playapp"
 
 # 4) Change firebase app name.

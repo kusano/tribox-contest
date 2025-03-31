@@ -38,7 +38,7 @@
 @if(cid == "") {
     <div id="main-menu" class="row" ng-controller="InProgressCtrl">
         <div id="main-menu-1" class="col xs-3">
-            <a href="@routes.HomeController.about">トリコンとは</a>
+            <a href="@routes.HomeController.about">KSNコンとは</a>
         </div>
         <div id="main-menu-2" class="col xs-3">
             <a href="/contest/{{ inProgress.lastContest | removeHead }}" ng-show="inProgress.lastContest != 'cxxxxxxx'">リザルト</a>
