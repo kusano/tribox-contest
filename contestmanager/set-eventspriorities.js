@@ -10,18 +10,7 @@ var contestRef = require('./contestref.js').ref;
 
 // 競技と優先度のリスト
 var EventsPriorities = {
-    'e333': 10.0,
-    'e222': 20.0,
-    'e444': 30.0,
-    'e555': 40.0,
-    'e666': 50.0,
-    'e777': 60.0,
-    'e333bf': 70.0,
-    'e333fm': 80.0,
-    'e333oh': 90.0,
-    'eminx': 120.0,
-    'epyram': 130.0,
-    'esq1': 150.0
+    'efto': 100.0,
 };
 
 var setEventsPriorities = function() {

@@ -5,86 +5,6 @@
         }
     },
     "events": {
-        "e222": {
-            ".priority" : 40.0,
-            "attempts": 5,
-            "format": "time",
-            "hasInspection": true,
-            "method": "average",
-            "name": "2×2×2",
-            "scramblePuzzle": "222"
-        },
-        "e333": {
-            ".priority" : 10.0,
-            "attempts": 5,
-            "format": "time",
-            "hasInspection": true,
-            "method": "average",
-            "name": "3×3×3",
-            "scramblePuzzle": "333"
-        },
-        "e333bf": {
-            ".priority" : 50.0,
-            "attempts": 3,
-            "format": "time",
-            "hasInspection": false,
-            "method": "best",
-            "name": "3×3×3 目隠し",
-            "scramblePuzzle": "333ni"
-        },
-        "e333fm": {
-            ".priority" : 70.0,
-            "attempts": 1,
-            "format": "number",
-            "hasInspection": false,
-            "method": "best",
-            "name": "3×3×3 最少手数",
-            "scramblePuzzle": "333fm"
-        },
-        "e333oh": {
-            ".priority" : 60.0,
-            "attempts": 5,
-            "format": "time",
-            "hasInspection": true,
-            "method": "average",
-            "name": "3×3×3 片手",
-            "scramblePuzzle": "333"
-        },
-        "e444": {
-            ".priority" : 20.0,
-            "attempts": 5,
-            "format": "time",
-            "hasInspection": true,
-            "method": "average",
-            "name": "4×4×4",
-            "scramblePuzzle": "444"
-        },
-        "e555": {
-            ".priority" : 30.0,
-            "attempts": 5,
-            "format": "time",
-            "hasInspection": true,
-            "method": "average",
-            "name": "5×5×5",
-            "scramblePuzzle": "555"
-        },
-        "e666": {
-            ".priority" : 40.0,
-            "attempts": 3,
-            "format": "time",
-            "hasInspection": true,
-            "method": "mean",
-            "name": "6×6×6",
-            "scramblePuzzle": "666"
-        },
-        "e777": {
-            "attempts": 3,
-            "format": "time",
-            "hasInspection": true,
-            "method": "mean",
-            "name": "7×7×7",
-            "scramblePuzzle": "777"
-        },
         "efto": {
             "attempts": 5,
             "format": "time",
@@ -92,46 +12,6 @@
             "method": "average",
             "name": "FTO",
             "scramblePuzzle": "fto"
-        },
-        "eclock": {
-            "attempts": 5,
-            "format": "time",
-            "hasInspection": true,
-            "method": "average",
-            "name": "Clock",
-            "scramblePuzzle": "clock"
-        },
-        "eminx": {
-            "attempts": 5,
-            "format": "time",
-            "hasInspection": true,
-            "method": "average",
-            "name": "Megaminx",
-            "scramblePuzzle": "minx"
-        },
-        "epyram": {
-            "attempts": 5,
-            "format": "time",
-            "hasInspection": true,
-            "method": "average",
-            "name": "Pyraminx",
-            "scramblePuzzle": "pyram"
-        },
-        "eskewb": {
-            "attempts": 5,
-            "format": "time",
-            "hasInspection": true,
-            "method": "average",
-            "name": "Skewb",
-            "scramblePuzzle": "skewb"
-        },
-        "esq1": {
-            "attempts": 5,
-            "format": "time",
-            "hasInspection": true,
-            "method": "average",
-            "name": "Square-1",
-            "scramblePuzzle": "sq1"
         }
     },
     "inProgress": {

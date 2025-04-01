@@ -14,7 +14,7 @@ var Config = require('./config.js');
 var contestRef = require('./contestref.js').ref;
 
 // デフォルトの競技
-var EventsDefault = ['e333', 'e222', 'e444', 'e555', 'e666', 'e777', 'e333bf', 'e333fm', 'e333oh', 'eminx', 'epyram', 'eskewb', 'esq1', 'eclock', 'efto'];
+var EventsDefault = ['efto'];
 
 var ftoScrambles = [
     // FTOのスクランブルをここに貼る。
@@ -97,7 +97,7 @@ contestRef.child('events').once('value', function(snap) {
             'contestId': parseInt(contestId),
             'beginAt': beginTimestamp,
             'endAt': nextTimestamp,
-            'contestName': 'TORIBO Contest ' + year + ' ' + seasonName + ' 第' + i + '節',
+            'contestName': 'KSN Contest ' + year + ' ' + seasonName + ' 第' + i + '節',
             'year': parseInt(year),
             'season': parseInt(season),
             'number': i
@@ -117,6 +117,8 @@ contestRef.child('events').once('value', function(snap) {
         async.eachSeries(contestsIndexes, function(contestId, next) {
             var contest = contests[contestId];
 
+            // TNoodle で生成するスクランブルが無いので、コメントアウト。
+            /*
             var url = 'http://' + Config.TNOODLE_HOST + ':2014/scramble/.json?seed=' + contestId + Config.SEED;
             contest.events.forEach(function(eventId) {
                 if (eventId != "efto") {
@@ -136,13 +138,16 @@ contestRef.child('events').once('value', function(snap) {
             // TNoodle でスクランブルを生成して取得
             request(options, function(error, response, body) {
                 if (!error && response.statusCode == 200) {
+                */
                     scrambles[contestId] = {};
                     scramblesIndexes.push(contestId);
+                    /*
                     body.forEach(function(result) {
                         var _title = result.title;
                         var _scrambles = result.scrambles;
                         scrambles[contestId][_title] = _scrambles;
                     });
+                    */
 
                     // FTOがあればここで追加。
                     contest.events.forEach(function(eventId) {
@@ -156,11 +161,13 @@ contestRef.child('events').once('value', function(snap) {
 
                     console.log('done for ' + contestId);
                     next();
+                    /*
                 } else {
                     console.error(error);
                     process.exit(1);
                 }
             });
+            */
 
         }, function(err) {
             if (!err) {
