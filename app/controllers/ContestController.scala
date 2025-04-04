@@ -25,7 +25,7 @@ class ContestController @Inject() (
     }
 
     def contest(cid: String) = Action {
-        Ok(views.html.contest(cid, getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestDatabaseURL, getFirebaseappContestMessagingsenderid, getFirebaseappWca))
+        Ok(views.html.contest(cid, getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestDatabaseURL, getFirebaseappContestMessagingsenderid))
     }
 
     def choose(cid: String, eid: String) = Action {
@@ -136,7 +136,7 @@ class ContestController @Inject() (
     }
 
     def result(cid: String, eid: String) = Action {
-        Ok(views.html.contestresult(cid, eid, getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestDatabaseURL, getFirebaseappContestMessagingsenderid, getFirebaseappWca))
+        Ok(views.html.contestresult(cid, eid, getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestDatabaseURL, getFirebaseappContestMessagingsenderid))
     }
 
 }

@@ -8,8 +8,6 @@ exports.CONTESTAPP_SECRET = 'xxxxxxxx';
 exports.CONTESTAPP_DB_URL = 'xxxxxxxx';
 exports.TRIBOXAPP         = 'xxxxxxxx';
 exports.TRIBOXAPP_SECRET  = 'xxxxxxxx';
-exports.WCAAPP            = 'xxxxxxxx';
-exports.WCAAPP_SECRET     = 'xxxxxxxx';
 
 // MySQL の設定
 exports.MYSQL_HOST     = 'xxxxxxxx';
@@ -22,12 +20,6 @@ exports.MYSQL_STORE_HOST     = 'xxxxxxxx';
 exports.MYSQL_STORE_USER     = 'xxxxxxxx';
 exports.MYSQL_STORE_PASSWORD = 'xxxxxxxx';
 exports.MYSQL_STORE_DATABASE = 'xxxxxxxx';
-
-// MySQL の設定 (WCA)
-exports.MYSQL_WCA_HOST     = 'xxxxxxxx';
-exports.MYSQL_WCA_USER     = 'xxxxxxxx';
-exports.MYSQL_WCA_PASSWORD = 'xxxxxxxx';
-exports.MYSQL_WCA_DATABASE = 'xxxxxxxx';
 
 // Twitter
 exports.CONSUMER_KEY        = 'xxxxxxxx';

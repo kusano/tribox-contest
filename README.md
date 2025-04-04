@@ -13,7 +13,6 @@ URL: https://contest.tribox.com/
 * Node.js v8.14.0
 * [TNoodle](https://github.com/cubing/tnoodle) v0.14.0
 * [Sarumawashi](https://github.com/kotarot/Sarumawashi)
-* wca-importer
 * [PHPMailer](https://github.com/PHPMailer/PHPMailer) is needed in the `contestmanager` directory.
 
 ## Setup
@@ -236,13 +235,6 @@ node contestmanager/append-winners.js
 参加済み人数を表示するために、適当な間隔でポーリングする。カウント結果はfirebaseデータベースに書き込まれる。
 ```
 node contestmanager/count-participants.js --inprogress --save
-```
-
-#### WCAデータベースインポートとWCA APPの更新
-wca-importer を用いる。
-```
-php -f /path/to/wca-importer/import.php
-node contestmanager/update-wcaapp.js
 ```
 
 #### 種目を追加する

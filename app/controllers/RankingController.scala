@@ -16,7 +16,7 @@ class RankingController @Inject() (cc: ControllerComponents, configuration: Conf
         Ok(views.html.rankingdefault(getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestDatabaseURL, getFirebaseappContestMessagingsenderid))
     }
     def ranking(sid: String) = Action {
-        Ok(views.html.ranking(sid, getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestDatabaseURL, getFirebaseappContestMessagingsenderid, getFirebaseappWca))
+        Ok(views.html.ranking(sid, getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestDatabaseURL, getFirebaseappContestMessagingsenderid))
     }
 
     def rankingpuzzledefault = Action {
