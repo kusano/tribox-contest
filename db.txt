@@ -1,0 +1,20 @@
+insert into `dtb_products`(`product_id`, `name`, `main_image`, `maker_id`, `status`, `del_flg`) values(3760, 'DianSheng Galaxy FTO Magnetic', '', 0, 1, 0);
+insert into `dtb_products`(`product_id`, `name`, `main_image`, `maker_id`, `status`, `del_flg`) values(3835, 'DaYan FTO Magnetic BC', '', 0, 1, 0);
+insert into `dtb_products`(`product_id`, `name`, `main_image`, `maker_id`, `status`, `del_flg`) values(3837, 'QiYi FTO Tiled', '', 0, 1, 0);
+insert into `dtb_products`(`product_id`, `name`, `main_image`, `maker_id`, `status`, `del_flg`) values(3838, 'QiYi FTO Tiled Magnetic', '', 0, 1, 0);
+
+insert into `dtb_category`(`category_id`, `category_name`, `parent_category_id`) values(1, 'ルービック系パズル', 0);
+insert into `dtb_category`(`category_id`, `category_name`, `parent_category_id`) values(3, 'ブランド', 0);
+insert into `dtb_category`(`category_id`, `category_name`, `parent_category_id`) values(110, '4面体, 8面体', 1);
+insert into `dtb_category`(`category_id`, `category_name`, `parent_category_id`) values(304, 'QiYi MoFangGe', 3);
+insert into `dtb_category`(`category_id`, `category_name`, `parent_category_id`) values(309, 'DaYan', 3);
+insert into `dtb_category`(`category_id`, `category_name`, `parent_category_id`) values(523, 'DianSheng', 3);
+
+insert into `dtb_product_categories`(`product_id`, `category_id`) values(3760, 110);
+insert into `dtb_product_categories`(`product_id`, `category_id`) values(3760, 523);
+insert into `dtb_product_categories`(`product_id`, `category_id`) values(3835, 110);
+insert into `dtb_product_categories`(`product_id`, `category_id`) values(3835, 309);
+insert into `dtb_product_categories`(`product_id`, `category_id`) values(3837, 110);
+insert into `dtb_product_categories`(`product_id`, `category_id`) values(3837, 304);
+insert into `dtb_product_categories`(`product_id`, `category_id`) values(3838, 110);
+insert into `dtb_product_categories`(`product_id`, `category_id`) values(3838, 304);
