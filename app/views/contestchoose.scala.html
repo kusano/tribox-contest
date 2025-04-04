@@ -123,8 +123,8 @@
 @authjs(redirectLogin="", redirectLogout="", checkFirst=true)
 @contestjs(cid=cid, eid=eid, fetchScrambles=false, fetchResultsTop3=false, fetchResultsAll=false)
 <script>
-app.controller('ContestChooseCtrl', ['$scope', '$timeout', function($scope, $timeout) {
-firebase.auth().onAuthStateChanged(function(authData) {
+app.controller('ContestChooseCtrl', ['$scope', '$timeout', 'Auth', function($scope, $timeout, Auth) {
+Auth.$onAuthStateChanged(function(authData) {
     $scope.invalidPage = false;
     $scope.contestChooseLoaded = false;
 
@@ -143,7 +143,7 @@ firebase.auth().onAuthStateChanged(function(authData) {
     } else {
         location.href = '@routes.HomeController.index?logout=1';
     }
-}); // onAuthStateChange
+});
 }]);
 </script>
 

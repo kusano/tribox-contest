@@ -234,8 +234,8 @@
 @authjs(redirectLogin="", redirectLogout="", checkFirst=true)
 @contestjs(cid=cid, fetchScrambles=false, fetchResultsTop3=true, fetchResultsAll=false)
 <script>
-app.controller('ContestIndexCtrl', ['$scope', '$timeout', function($scope, $timeout) {
-firebase.auth().onAuthStateChanged(function(authData) {
+app.controller('ContestIndexCtrl', ['$scope', '$timeout', 'Auth', function($scope, $timeout, Auth) {
+Auth.$onAuthStateChanged(function(authData) {
     $scope.eventsDone = {};
     $scope.justSuspended = null;
     $scope.justDone = null;

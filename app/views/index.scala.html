@@ -186,8 +186,8 @@
 
 @authjs(redirectLogin="", redirectLogout="", checkFirst=true)
 <script>
-app.controller('IndexCtrl', ['$scope', '$timeout', '$interval', function($scope, $timeout, $interval) {
-firebase.auth().onAuthStateChanged(function(authData) {
+app.controller('IndexCtrl', ['$scope', '$timeout', '$interval', 'Auth', function($scope, $timeout, $interval, Auth) {
+Auth.$onAuthStateChanged(function(authData) {
     $scope.events = null;
     $scope.inProgress = null;
     $scope.inProgressContest = null;

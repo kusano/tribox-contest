@@ -172,7 +172,7 @@ textarea.form-control {
 @authjs(redirectLogin="", redirectLogout="", checkFirst=true)
 @contestjs(cid=cid, eid=eid, fetchScrambles=true, fetchResultsTop3=false, fetchResultsAll=false)
 <script>
-app.controller('ContestSolutionCtrl', ['$scope', '$timeout', function($scope, $timeout) {
+app.controller('ContestSolutionCtrl', ['$scope', '$timeout', 'Auth', function($scope, $timeout, Auth) {
 
 @if(eid != "333fm") {
 
@@ -180,7 +180,7 @@ app.controller('ContestSolutionCtrl', ['$scope', '$timeout', function($scope, $t
     $scope.contestSolutionLoaded = true;
 
 } else {
-firebase.auth().onAuthStateChanged(function(authData) {
+Auth.$onAuthStateChanged(function(authData) {
     $scope.invalidPage = false;
     $scope.contestSolutionLoaded = false;
 
@@ -308,7 +308,7 @@ firebase.auth().onAuthStateChanged(function(authData) {
     // Save & Fetch data
     // Prepare button for the next page
     var saveAndPrepare = function() {
-        firebase.auth().onAuthStateChanged(function(authData) {
+        Auth.$onAuthStateChanged(function(authData) {
         if (authData) {
             contestRef.child('results').child('c@{cid}').child('e@{eid}').child(authData.uid).child('details').set($scope.results, function(error) {
                 if (!error) {

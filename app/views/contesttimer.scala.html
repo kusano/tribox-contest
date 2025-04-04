@@ -150,7 +150,7 @@ audiojs.events.ready(function() {
 });
 var a = audiojs.createAll();
 
-app.controller('ContestTimerCtrl', ['$scope', '$timeout', '$interval', function($scope, $timeout, $interval) {
+app.controller('ContestTimerCtrl', ['$scope', '$timeout', '$interval', 'Auth', function($scope, $timeout, $interval, Auth) {
 
 @if(eid == "333fm") {
 
@@ -158,7 +158,7 @@ app.controller('ContestTimerCtrl', ['$scope', '$timeout', '$interval', function(
     $scope.contestTimerLoaded = true;
 
 } else {
-firebase.auth().onAuthStateChanged(function(authData) {
+Auth.$onAuthStateChanged(function(authData) {
     $scope.invalidPage = false;
     $scope.contestTimerLoaded = false;
 

@@ -194,8 +194,8 @@
 @authjs(redirectLogin="", redirectLogout="", checkFirst=true)
 @contestjs(cid=cid, eid=eid, fetchScrambles=false, fetchResultsTop3=false, fetchResultsAll=false)
 <script>
-app.controller('ContestConfirmCtrl', ['$scope', '$timeout', function($scope, $timeout) {
-firebase.auth().onAuthStateChanged(function(authData) {
+app.controller('ContestConfirmCtrl', ['$scope', '$timeout', 'Auth', function($scope, $timeout, Auth) {
+Auth.$onAuthStateChanged(function(authData) {
     $scope.result = null;
     $scope.resultsData = null;
     $scope.resultsDetail = null;
@@ -310,7 +310,7 @@ firebase.auth().onAuthStateChanged(function(authData) {
     };
 
     $scope.submitResult = function() {
-        firebase.auth().onAuthStateChanged(function(authData) {
+        Auth.$onAuthStateChanged(function(authData) {
         if (authData) {
             if (!($scope.puzzle) || !($scope.puzzle.type)) {
                 $scope.error = '使用キューブを選択してください。';
