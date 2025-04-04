@@ -35,7 +35,7 @@ app.controller('AuthUsernameCtrl', ['$scope', '$timeout', 'Auth', function($scop
         var _oldUsername = $scope.oldUsername;
         var _newUsername = $scope.newUsername;
 
-        firebase.auth().onAuthStateChanged(function(authData) {
+        Auth.$onAuthStateChanged(function(authData) {
         if (authData) {
             if (_oldUsername == _newUsername) {
                 $scope.error = '現在のユーザIDと新しいユーザIDが同じです。';

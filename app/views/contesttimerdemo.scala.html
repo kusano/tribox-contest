@@ -129,8 +129,8 @@ audiojs.events.ready(function() {
 });
 var a = audiojs.createAll();
 
-app.controller('ContestTimerCtrl', ['$scope', '$timeout', function($scope, $timeout) {
-firebase.auth().onAuthStateChanged(function(authData) {
+app.controller('ContestTimerCtrl', ['$scope', '$timeout', 'Auth', function($scope, $timeout, Auth) {
+Auth.$onAuthStateChanged(function(authData) {
     $scope.invalidPage = false;
     $scope.contestTimerLoaded = false;
 
