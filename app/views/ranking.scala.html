@@ -71,7 +71,6 @@ h3, h4 {
                     <tr ng-repeat="data in seasonPointsSorted[eid]">
                         <td>{{ data.rank }}</td>
                         <td>
-                            <img src="@routes.Assets.versioned("flags/flags-iso/shiny/24")/{{ data.user.iso2 }}.png" height="24" style="vertical-align: middle;" ng-show="data.user.iso2">
                             <a href="/user/{{ data.user.username }}">{{ data.user.displayname }}</a>
                         </td>
                         <td>{{ data.user.organization }}</td>

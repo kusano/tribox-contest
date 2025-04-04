@@ -195,7 +195,6 @@ var drawChart = function(dataall, data) {
                         <span ng-if="(r.seasonPoint || r.seasonPointVideoBonus) && (r.seasonPoint + r.seasonPointVideoBonus) > 0">{{ r.seasonPoint + r.seasonPointVideoBonus }}</span>
                     </td>
                     <td>
-                        <img src="@routes.Assets.versioned("flags/flags-iso/shiny/24")/{{ r.user.iso2 }}.png" height="24" style="vertical-align: middle;" ng-show="r.user.iso2">
                         <a href="/user/{{ r.user.username }}">{{ r.user.displayname }}</a>
                     </td>
                     <td class="mb-hide ellipsis">{{ r.user.organization }}</td>

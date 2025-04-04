@@ -96,16 +96,6 @@ a.video-url {
                     <th>WCA</th>
                     <td><a href="https://www.worldcubeassociation.org/persons/{{ thisUserData.wcaId }}" target="_blank" rel="noopener noreferrer">{{ thisUserData.wcaId }}</a></td>
                 </tr>
-                <tr ng-show="thisUserData.wcaId">
-                    <th>国籍</th>
-                    <td>
-                        <span ng-show="!(thisUserData.iso2)">Loading...</span>
-                        <span ng-show="thisUserData.iso2">
-                            <img src="@routes.Assets.versioned("flags/flags-iso/shiny/24")/{{ thisUserData.iso2 }}.png" height="24" style="vertical-align: middle;" ng-show="thisUserData.iso2">
-                            {{ thisUserData.country }}
-                        </span>
-                    </td>
-                </tr>
                 <tr ng-show="thisUserData.twitterId">
                     <th>Twitter</th>
                     <td><a href="https://twitter.com/{{ thisUserData.twitterId }}" target="_blank">@@{{ thisUserData.twitterId }}</a></td>

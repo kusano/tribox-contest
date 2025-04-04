@@ -12,26 +12,6 @@
                 "name": {
                     ".validate": "newData.isString()"
                 },
-                "countryId": {
-                    ".validate": "newData.isString()"
-                },
-                "$other": {
-                    ".validate": false
-                }
-            }
-        },
-
-        // Countries
-        "countries": {
-            ".read": true,
-            ".write": false,
-            "$id": {
-                "name": {
-                    ".validate": "newData.isString()"
-                },
-                "iso2": {
-                    ".validate": "newData.isString() && newData.val().length == 2"
-                },
                 "$other": {
                     ".validate": false
                 }
