@@ -5,13 +5,6 @@ play.crypto.secret = "changeme"
 
 # 2) Change database configurations.
 db {
-    # Default database configuration using MySQL database engine
-    # Connect to playdb as playdbuser
-    default.driver = com.mysql.jdbc.Driver
-    default.url = "jdbc:mysql://localhost/playdb?characterEncoding=UTF-8"
-    default.username = playdbuser
-    default.password = "playdbpassword"
-
     store.driver = com.mysql.jdbc.Driver
     store.url = "jdbc:mysql://localhost/storedb?characterEncoding=UTF-8"
     store.username = storedbuser
