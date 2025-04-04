@@ -32,9 +32,6 @@ class HomeController @Inject() (cc: ControllerComponents, configuration: Configu
     def getFirebaseappContestMessagingsenderid(): String = {
         return configuration.underlying.getString("firebaseapp.contestmessagingsenderid")
     }
-    def getFirebaseappWca(): String = {
-        return configuration.underlying.getString("firebaseapp.wca")
-    }
     def getPlayAppPath(): String = {
         return configuration.underlying.getString("contest.playpath")
     }

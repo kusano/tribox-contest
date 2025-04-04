@@ -1,4 +1,4 @@
-@(sid: String, contestName: String, contestDescription: String, contestUrl: String, firebaseappContest: String, firebaseappContestApikey: String, firebaseappContestDatabaseURL: String, firebaseappContestMessagingsenderid: String, firebaseappWca: String)
+@(sid: String, contestName: String, contestDescription: String, contestUrl: String, firebaseappContest: String, firebaseappContestApikey: String, firebaseappContestDatabaseURL: String, firebaseappContestMessagingsenderid: String)
 
 @defining("Ranking " + sid.slice(0, 4) + " " + sid.slice(4, 5) + "H") { title =>
 @defining(contestUrl + "/ranking/" + sid) { pageUrl =>
@@ -8,7 +8,7 @@
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
     @header(title=title, description=contestDescription, sitename=contestName, url=pageUrl, contestUrl=contestUrl)
 
-    @basejs(firebaseappContest, firebaseappContestApikey, firebaseappContestDatabaseURL, firebaseappContestMessagingsenderid, firebaseappWca)
+    @basejs(firebaseappContest, firebaseappContestApikey, firebaseappContestDatabaseURL, firebaseappContestMessagingsenderid)
 
 <style>
 h3, h4 {
@@ -302,27 +302,6 @@ app.controller('RankingCtrl', ['$scope', '$timeout', function($scope, $timeout) 
                             $scope.events = events;
                             $scope.seasonPointsSorted = seasonPointsSorted;
                         });
-
-                        // ユーザの国籍を非同期に読み込む
-                        Object.keys(seasonPointsSorted).forEach(function(eid) {
-                            seasonPointsSorted[eid].forEach(function(data, index) {
-                                if (wcaRef && data.user.wcaId) {
-                                    wcaRef.child('persons').child(data.user.wcaId).once('value', function(snapPerson) {
-                                        if (snapPerson.exists()) {
-                                            wcaRef.child('countries').child(snapPerson.val().countryId).once('value', function(snapCountry) {
-                                                if (snapCountry.exists()) {
-                                                    seasonPointsSorted[eid][index].user.iso2 = snapCountry.val().iso2;
-                                                    $timeout(function() {
-                                                        $scope.seasonPointsSorted = seasonPointsSorted;
-                                                    });
-                                                }
-                                            });
-                                        }
-                                    });
-                                }
-                            });
-                        });
-
                     }
                 });
             });

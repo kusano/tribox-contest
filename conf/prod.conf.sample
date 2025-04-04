@@ -14,11 +14,6 @@ db {
     #stickers.url = "jdbc:mysql://localhost/stickersdb?characterEncoding=UTF-8"
     #stickers.username = stickersdbuser
     #stickers.password = "stickersdbpassword"
-
-    #wca.driver = com.mysql.jdbc.Driver
-    #wca.url = "jdbc:mysql://localhost/wcadb?characterEncoding=UTF-8"
-    #wca.username = wcadbuser
-    #wca.password = "wcadbpassword"
 }
 
 # 3) Change contest info.
@@ -32,7 +27,6 @@ firebaseapp.contest = "firebase-contest-app"
 firebaseapp.contestapikey = "firebase-contest-app_apiKey"
 firebaseapp.contestdatabaseurl = "firebase-contest-database_url"
 firebaseapp.contestmessagingsenderid = "firebase-contest-app_messagingSenderId"
-firebaseapp.wca = "firebase-wca-app"
 
 # 5) Admin API token
 admin.api.token = "****"

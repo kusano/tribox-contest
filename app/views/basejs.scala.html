@@ -1,4 +1,4 @@
-@(firebaseappContest: String, firebaseappContestApikey: String, firebaseappContestDatabaseURL: String, firebaseappContestMessagingsenderid: String, firebaseappWca: String = "")
+@(firebaseappContest: String, firebaseappContestApikey: String, firebaseappContestDatabaseURL: String, firebaseappContestMessagingsenderid: String)
 
 <script>
 window.TriboxContest = {};
@@ -225,19 +225,6 @@ var config = {
 };
 firebase.initializeApp(config);
 var contestRef = firebase.database().ref();
-
-@if(firebaseappWca != "") {
-var wcaConfig = {
-    apiKey: "AIzaSyAUq3WAGmhgkGscQPIwuICQuzV9KBrcxXo",
-    authDomain: "@{firebaseappWca}.firebaseapp.com",
-    databaseURL: "https://@{firebaseappWca}.firebaseio.com",
-    projectId: "@{firebaseappWca}",
-    storageBucket: "@{firebaseappWca}.appspot.com",
-    messagingSenderId: "871724054787"
-};
-var wcaApp = firebase.initializeApp(wcaConfig, "wca");
-var wcaRef = wcaApp.database().ref();
-}
 
 /**
  * Filter: toDate
