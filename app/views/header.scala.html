@@ -26,7 +26,7 @@
         } else {
             <meta property="og:title" content="@title">
         }
-        <meta property="og:image" content="@{contestUrl}@routes.Assets.versioned("images/triboxContest_image.png")">
+        <meta property="og:image" content="@{contestUrl}@routes.Assets.versioned("images/ksncon.png")">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="1600">
         <meta property="og:image:height" content="900">
@@ -46,14 +46,14 @@
         @if(event != ""){
             <meta name="twitter:image:src" content="@{contestUrl}@routes.Assets.versioned("images/twitter_card/"+{{event}}+".png")">
         } else {
-            <meta name="twitter:image:src" content="@{contestUrl}@routes.Assets.versioned("images/triboxContest_image_202007.png")">
+            <meta name="twitter:image:src" content="@{contestUrl}@routes.Assets.versioned("images/ksncon_square.png")">
         }
 
         <link rel="canonical" href="@url">
     }
 
-    <link rel="shortcut icon" href="@routes.Assets.versioned("images/favicon.svg")" type="image/svg+xml">
-    <link rel="apple-touch-icon-precomposed" href="@routes.Assets.versioned("images/apple-touch-icon-precomposed.png")">
+    <link rel="shortcut icon" href="@routes.Assets.versioned("images/favicon.png")" type="image/svg+xml">
+    <link rel="apple-touch-icon-precomposed" href="@routes.Assets.versioned("images/favicon.png")">
 
     <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("skyblue/css/skyblue.min.css")">
     <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
