@@ -62,13 +62,6 @@ class HomeController @Inject() (cc: ControllerComponents, configuration: Configu
     }
 
     /**
-     * Release Notes
-     */
-    def christmas2018 = Action {
-        Ok(views.html.christmas2018(getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestDatabaseURL, getFirebaseappContestMessagingsenderid))
-    }
-
-    /**
      * Auth
      */
     def join = Action {
