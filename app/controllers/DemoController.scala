@@ -13,7 +13,7 @@ import play.api.mvc._
 class DemoController @Inject() (cc: ControllerComponents, configuration: Configuration) extends HomeController(cc, configuration) {
 
     def timer = Action {
-        Ok(views.html.contesttimerdemo(getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestDatabaseURL, getFirebaseappContestMessagingsenderid))
+        Ok(views.html.contesttimerdemo(getContestName(), getContestDescription(), getContestUrl(), getFirebaseappContest(), getFirebaseappContestApikey(), getFirebaseappContestDatabaseURL(), getFirebaseappContestMessagingsenderid()))
     }
 
 }
