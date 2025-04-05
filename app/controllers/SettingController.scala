@@ -20,30 +20,29 @@ import scala.language.postfixOps
 @Singleton
 class SettingController @Inject() (
     cc: ControllerComponents,
-    configuration: Configuration,
-    customerService: CustomerRepository) extends HomeController(cc, configuration) {
+    configuration: Configuration) extends HomeController(cc, configuration) {
 
     /**
      * Setting: Setting / First setting / Other settings
      */
     def setting = Action {
-        Ok(views.html.setting(getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestDatabaseURL, getFirebaseappContestMessagingsenderid))
+        Ok(views.html.setting(getContestName(), getContestDescription(), getContestUrl(), getFirebaseappContest(), getFirebaseappContestApikey(), getFirebaseappContestDatabaseURL(), getFirebaseappContestMessagingsenderid()))
     }
 
     def settingfirst = Action {
-        Ok(views.html.settingfirst(getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestDatabaseURL, getFirebaseappContestMessagingsenderid))
+        Ok(views.html.settingfirst(getContestName(), getContestDescription(), getContestUrl(), getFirebaseappContest(), getFirebaseappContestApikey(), getFirebaseappContestDatabaseURL(), getFirebaseappContestMessagingsenderid()))
     }
 
     def settingemail = Action {
-        Ok(views.html.settingemail(getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestDatabaseURL, getFirebaseappContestMessagingsenderid))
+        Ok(views.html.settingemail(getContestName(), getContestDescription(), getContestUrl(), getFirebaseappContest(), getFirebaseappContestApikey(), getFirebaseappContestDatabaseURL(), getFirebaseappContestMessagingsenderid()))
     }
 
     def settingpassword = Action {
-        Ok(views.html.settingpassword(getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestDatabaseURL, getFirebaseappContestMessagingsenderid))
+        Ok(views.html.settingpassword(getContestName(), getContestDescription(), getContestUrl(), getFirebaseappContest(), getFirebaseappContestApikey(), getFirebaseappContestDatabaseURL(), getFirebaseappContestMessagingsenderid()))
     }
 
     def settingusername = Action {
-        Ok(views.html.settingusername(getContestName, getContestDescription, getContestUrl, getFirebaseappContest, getFirebaseappContestApikey, getFirebaseappContestDatabaseURL, getFirebaseappContestMessagingsenderid))
+        Ok(views.html.settingusername(getContestName(), getContestDescription(), getContestUrl(), getFirebaseappContest(), getFirebaseappContestApikey(), getFirebaseappContestDatabaseURL(), getFirebaseappContestMessagingsenderid()))
     }
 
     // トークンを生成
