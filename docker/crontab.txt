@@ -1,0 +1,8 @@
+# Update inProgress contest and results
+0 21 * * 0 /usr/bin/node /app/contestmanager/update-inprogress.js
+
+# Count participants
+5,15,25,35,45,55 * * * * /usr/bin/node /app/contestmanager/count-participants.js --inprogress --save
+
+# Points
+#2 22 * * 0 /usr/bin/node /app/contestmanager/append-points.js
