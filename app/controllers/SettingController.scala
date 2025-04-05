@@ -20,8 +20,7 @@ import scala.language.postfixOps
 @Singleton
 class SettingController @Inject() (
     cc: ControllerComponents,
-    configuration: Configuration,
-    customerService: CustomerRepository) extends HomeController(cc, configuration) {
+    configuration: Configuration) extends HomeController(cc, configuration) {
 
     /**
      * Setting: Setting / First setting / Other settings
