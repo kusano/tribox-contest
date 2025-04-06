@@ -27,6 +27,7 @@ COPY --chown=app:app contestmanager/package.json contestmanager/package-lock.jso
 RUN npm install --prefix contestmanager
 COPY --chown=app:app contestmanager/ /app/contestmanager/
 RUN ln -s /data/config.js /app/contestmanager/config.js
+RUN ln -s /data/serviceAccountKey.js /app/contestmanager/serviceAccountKey.js
 
 COPY --chown=app:app app/ app/
 COPY --chown=app:app conf/logback.xml conf/
