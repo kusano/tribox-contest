@@ -1,5 +1,5 @@
 # Update inProgress contest and results
-0 21 * * 0 /usr/bin/node /app/contestmanager/update-inprogress.js
+0 21 * * 0 /usr/bin/node /app/contestmanager/update-inprogress.js && /usr/bin/node /app/contestmanager/collect-results.js --lastcontest --check --resetlottery --lottery
 
 # Count participants
 5,15,25,35,45,55 * * * * /usr/bin/node /app/contestmanager/count-participants.js --inprogress --save
