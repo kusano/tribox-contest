@@ -113,7 +113,9 @@ app.controller('AuthFirstSettingCtrl', ['$scope', 'Auth', function($scope, Auth)
                                             'createdAt': firebase.database.ServerValue.TIMESTAMP,
                                             'username': _username,
                                             'displayname': _displayname,
-                                            'organization': _organization
+                                            'organization': _organization,
+                                            // 各種ポイントの対象にするため、ストア連携済み扱いにする。
+                                            'isTriboxCustomer': true,
                                         }, function(error) {
                                             if (error) {
                                                 console.error(error);
