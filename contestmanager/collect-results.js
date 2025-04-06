@@ -11,7 +11,6 @@
  */
 
 var async = require('async');
-var mysql = require('mysql');
 var Twitter = require('twitter');
 
 var Config = require('./config.js');
@@ -276,15 +275,6 @@ var toFixedForPriority = function(n) {
 };
 // ================================================================
 
-var connection = mysql.createConnection({
-    host: Config.MYSQL_HOST,
-    user: Config.MYSQL_USER,
-    password: Config.MYSQL_PASSWORD,
-    database: Config.MYSQL_DATABASE
-});
-connection.connect();
-
-
 // 結果をツイートする
 var doTweet = function() {
     if (argvrun.options.tweet) {
@@ -365,103 +355,7 @@ var writeResults = function() {
         if (!err) {
             console.log('Completed updating user histories! (' + count + ' records)');
 
-            var readyForMysql = [];
-            // 通常の抽選
-            if (argvrun.options.lottery) {
-                // 抽選ポイントを加算するための待ちレコードを作成する
-                Object.keys(ready).forEach(function(eventId) {
-                    Object.keys(ready[eventId]).forEach(function(userId) {
-                        if (ready[eventId][userId].lottery) {
-                            readyForMysql.push({
-                                'eventId': eventId, 'userId': userId,
-                                'customerId': Usersecrets[userId].triboxStoreCustomerId,
-                                'point': Config.LOTTERY_POINT, 'pointType': 0
-                            });
-                        }
-                    });
-                });
-            }
-            // 全員当選ポイント
-            if (argvrun.options.lotteryall) {
-                // 抽選ポイントを加算するための待ちレコードを作成する
-                Object.keys(ready).forEach(function(eventId) {
-                    Object.keys(ready[eventId]).forEach(function(userId) {
-                        if (ready[eventId][userId].lottery) {
-                            if (eventId == ('e' + argvrun.options.lotteryall)) {
-                                readyForMysql.push({
-                                    'eventId': eventId, 'userId': userId,
-                                    'customerId': Usersecrets[userId].triboxStoreCustomerId,
-                                    'point': Config.LOTTERY_POINT_SP, 'pointType': 0
-                                });
-                            } else {
-                                readyForMysql.push({
-                                    'eventId': eventId, 'userId': userId,
-                                    'customerId': Usersecrets[userId].triboxStoreCustomerId,
-                                    'point': Config.LOTTERY_POINT, 'pointType': 0
-                                });
-                            }
-                        }
-                    });
-                });
-            }
-            // 契約アカウント当選
-            if (argvrun.options.triboxteam) {
-                Object.keys(readyTriboxTeam).forEach(function(eventId) {
-                    Object.keys(readyTriboxTeam[eventId]).forEach(function(userId) {
-                        if (readyTriboxTeam[eventId][userId]) {
-                            readyForMysql.push({
-                                'eventId': eventId, 'userId': userId,
-                                'customerId': Usersecrets[userId].triboxStoreCustomerId,
-                                'point': Config.TRIBOXTEAM_POINT, 'pointType': 1
-                            });
-                        }
-                    });
-                });
-            }
-
-            if (argvrun.options.lottery || argvrun.options.lotteryall || argvrun.options.triboxteam) {
-                console.log('== readyForMysql ==');
-                console.dir(readyForMysql);
-
-                var countLottery = 0;
-                async.each(readyForMysql, function(r, next) {
-                    var eventId = r.eventId;
-                    var userId = r.userId;
-                    var customerId = r.customerId;
-
-                    // ポイント加算履歴に待ちレコードとして登録する
-                    connection.query('INSERT INTO lottery_log SET ?', {
-                        'user_id': userId,
-                        'username': Users[userId].username,
-                        'contest_id': targetContest,
-                        'event_id': eventId,
-                        'customer_type': 0,
-                        'customer_id': customerId,
-                        'point': r.point,
-                        'point_type': r.pointType
-                    }, function(error, results, fields) {
-                        if (error) {
-                            console.error(error);
-                        } else {
-                            countLottery++;
-                            next();
-                        }
-                    });
-
-                }, function(err) {
-                    if (!err) {
-                        console.log('Completed creating ready records of lottery point! (' + countLottery + ' records)');
-                        doTweet();
-                    } else {
-                        console.error(err);
-                        process.exit(1);
-                    }
-                });
-
-            } else {
-                console.log('Skipped lottery point');
-                doTweet();
-            }
+            doTweet();
         } else {
             console.error(err);
             process.exit(1);
