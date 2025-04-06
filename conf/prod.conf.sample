@@ -18,7 +18,7 @@ db {
 
 # 3) Change contest info.
 contest.name = "KSN Contest KSNコン"
-contest.description = "KSNコンテストは、誰でも参加可能。毎週開催のお得なネットコンテストです。"
+contest.description = "KSNコンテストは、誰でも参加可能。毎週開催のお得ではないネットコンテストです。"
 contest.url = "https://ksncon.sweetduet.info"
 contest.playpath = "/path/to/playapp"
 
