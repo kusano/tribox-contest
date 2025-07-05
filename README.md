@@ -192,9 +192,33 @@ node --max-old-space-size=3000 contestmanager/generate-fmcimages.js -s 20162
 ```
 ※ `create-season.js` の中でresultsのスナップショットを取得するので `--max-old-space-size` でヒープサイズを上げておく必要がある（根本を直したい）。
 
+FTOのスクランブルはTNoodleで生成できないので、csTimerで生成して contestmanager/create-season.js に埋め込む。
+
 また、`app/views/index.scala.html` と `app/views/user.scala.html` と `app/views/ranking.scala.html` を変更して、シーズンリンク用のボタンを付ける。
 
 編集後、再コンパイル (jarの再生成) が必要。
+
+ローカルで、以下のコマンドでコンテナイメージを作成。
+
+```
+docker build . -t kusanok/ksncon
+docker login
+docker push kusanok/ksncon
+docker logout
+```
+
+サーバーで、以下のコマンドでコンテナイメージ更新。
+
+```
+docker pull kusanok/ksncon
+docker stop ksncon
+docker rm ksncon
+docker run ...
+```
+
+認証は、personal access tokenを使う。
+
+https://docs.docker.com/security/for-developers/access-tokens/
 
 #### 皆勤賞ポイント進呈
 
